@@ -43,7 +43,7 @@
 									<input type="text" id="newRestaurantName" name="newRestaurantName" placeholder="Nom du restaurant..." required><br />
 									<label for="newRestaurantAddress">Adresse</label>
 									<input type="text" id="newRestaurantAddress" name="newRestaurantAddress" placeholder="Adresse du restaurant" required><br />
-									<p>
+									<div>
 										Notez ce restaurant sur une échelle de 1 à 5 :
 										<select name="newRestaurantNote" id="newRestaurantNote">
 											<option disabled selected value>Note</option>
@@ -53,9 +53,9 @@
 											<option value="4">4</option>
 											<option value="5">5</option>
 										</select>
-									</p>
+									</div>
 									<p>Laissez un commentaire</p>
-									<Textarea id="newRestaurantReview" placeholder="Rédigez votre commentaire ici..." required></Textarea><br />
+									<textarea id="newRestaurantReview" placeholder="Rédigez votre commentaire ici..." required></textarea><br />
 									<button type="button" class="btn btnAddRestaurant btn-light ">Enregistrer</button>
 								</form>
 							</div>
@@ -65,7 +65,7 @@
 			</div>
 		</div> <!--id="header"-->
 		<!-- ROW MAP + RESTAURANTS LIST -->
-		<div class="row" id="map&List">
+		<div class="row" id="mapAndList">
 
 			<!-- COL MAP -->
 			<div class="col-9" id="colMap">
@@ -202,7 +202,7 @@
 
 			</div>
 
-		</div> <!--id="map&List"-->
+		</div> <!--id="mapAndList"-->
 
 	</div> <!--id="mainPage"-->
 	<script>
