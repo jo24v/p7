@@ -1,7 +1,5 @@
 /********************* GENERAL *********************/
-* {
-    color: #333;
-    font-family: 'Italiana', serif;
+* { font-family: 'Italiana', serif;
 }
 ul, li {
     list-style: none;
@@ -66,6 +64,9 @@ img {
     }
 
 /******** MAP ********/
+/*#map {
+    height: 100%;
+}*/
 
 
 
