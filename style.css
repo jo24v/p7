@@ -20,12 +20,21 @@ button:active, button:hover {
     border-style: none !important;
 }
 
+.green-text {
+    color: #b1c991;
+}
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 
 /********************** BODY **********************/
 /******** HEADER ********/
-#header { background-color: #dee5e5;}
+#header {
+    background-color: #dee5e5;
+}
 #addRestaurant, #addReview {
     background-image: linear-gradient(to right, #56793E 0%, #d2e2be 51%, #56793E 100%);
     padding: 6px 14px;
