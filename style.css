@@ -1,5 +1,8 @@
 /********************* GENERAL *********************/
-body {  }
+* {
+    color: #333;
+    font-family: 'Italiana', serif;
+}
 ul, li {
     list-style: none;
 }
@@ -22,6 +25,10 @@ button:active, button:hover {
 
 .green-text {
     color: #b1c991;
+}
+
+.bg-green {
+    background-color: #b1c991!important;
 }
 
 img {
