@@ -1,3 +1,4 @@
+
 let map, infoWindow;
 
 function initMap() {
@@ -15,11 +16,6 @@ function initMap() {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                stylers: [
-                    { background-color: 'black' }
-                   
-                    // Add any stylers you need.
-                ]
                 infoWindow.setPosition(pos);
                 infoWindow.setContent("Ici c'est vous");
                 infoWindow.open(map);
@@ -39,10 +35,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(
         browserHasGeolocation
-            ? "Erreur : le service de Géolocalisation a échoué."
-            : "Erreur : Votre nagigateur ne prend pas en charge la géolocalisation."
+            ? "Erreur : le service de GÃ©olocalisation a Ã©chouÃ©."
+            : "Erreur : Votre nagigateur ne prend pas en charge la gÃ©olocalisation."
     );
     infoWindow.open(map);
 }
-
 
