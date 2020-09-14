@@ -1,219 +1,236 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-	<!-- En-tête de la page -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 	<title>Titre de ma page</title>
 
-	<!-- CSS only -->
+	<!-- CSS  -->
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-	<!-- JS, Popper.js, and jQuery -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	
+	
 </head>
 	
 	<!-- Contenu de la page -->
-    <body>
-		
-		<div class="container-fluid" id="mainPage">
-			
-			<!-- HEADER -->
-			<div class="row" id="header">
-				<div class="col-10" id="logo">
-					<img class="mt-0 pt-0 ml-1" src="img/avisRestaurant_LogoP7.png" alt="Logo">
-				</div>
+<body>
 
-				<div class="col my-auto" id="">
-					<button type="button" class="test border-0" id="addRestaurant" data-toggle="modal" data-target="#modalAddRestaurant">Ajoutez un restaurant</button>
+	<div class="container-fluid" id="mainPage">
 
-					<!-- Modal add restaurant -->
-					<div class="modal fade" id="modalAddRestaurant" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLongTitle">Ajoutez un restaurant</h5>
+		<!-- HEADER -->
+		<div class="row" id="header">
+			<div class="col-10" id="logo">
+				<img class="mt-0 pt-0 ml-1" src="img/avisRestaurant_LogoP7.png" alt="Logo">
+			</div>
+
+			<div class="col my-auto">
+				<!--<button type="button" class="test border-0" id="addRestaurant" data-toggle="modal" data-target="#modalAddRestaurant">Ajoutez un restaurant</button>-->
+				<button type="button" class="test border-0" id="addRestaurant" data-toggle="modal" data-target="#darkModalForm">Ajoutez un restaurant</button>
+				<!-- Modal add restaurant-->
+				<div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					 aria-hidden="true">
+					<div class="modal-dialog form-dark modal-lg" role="document">
+						<div class="modal-content card card-image pb-5" style="background-image: url('img/AddNewRestaurant.jpg'); background-repeat: no-repeat center center fixed; -webkit-background-size: contain !important; -moz-background-size: contain !important; -o-background-size: contain !important;background-size: contain!important;">
+							<div class="text-white rgba-stylish-strong py-4 px-3">
+								<div class="modal-header text-center border-0 pb-2 pt-1">
+									<h3 class="modal-title w-100 mt-2 ml-5 pl-2" id="myModalLabel">
+										<strong>&ensp;&ensp;AJOUTEZ UN<span class="green-text"> RESTAURANT</span></strong>
+									</h3>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
+										<span aria-hidden="true" class="text-white pr-4 mt-0" style="font-size: 2em">&times;</span>
 									</button>
 								</div>
-								<div class="modal-body">
-									<form id="addRestaurantForm">
-										<label for="newRestaurantName">Nom</label>
-										<input type="text" id="newRestaurantName" name="newRestaurantName" placeholder="Nom du restaurant..." required><br />
-										<label for="newRestaurantAddress">Adresse</label>
-										<input type="text" id="newRestaurantAddress" name="newRestaurantAddress" placeholder="Adresse du restaurant" required><br />
-										<p>
-											Notez ce restaurant sur une échelle de 1 à 5 :
-											<select name="newRestaurantNote" id="newRestaurantNote">
-												<option disabled selected value>Note</option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-												<option value="4">4</option>
-												<option value="5">5</option>
-											</select>
-										</p>
-										<p>Laissez un commentaire</p>
-										<Textarea id="newRestaurantReview" placeholder="Rédigez votre commentaire ici..." required></Textarea><br />
-										<button type="button" class="btn btnAddRestaurant btn-light ">Enregistrer</button>
+								<div class="modal-body container ml-3 mt-0">
+									<form>
+										<div class="form-row justify-content-center">
+											<div class="form-group col-7">
+												<input type="text" id="newRestaurantName" class="form-control newRestaurantName" placeholder="Nom du restaurant" required>
+												<!--<label for="newRestaurantName">Nom du restaurant</label>-->
+											</div>
+										</div>
+
+										<div class="form-row justify-content-center mb-0">
+											<div class="form-group col-7">
+												<input type="text" class="form-control" id="inputAddress" placeholder="Adresse postale du restaurant" required>
+												<!--<label for="inputAddress">Adresse du restaurant</label>-->
+											</div>
+										</div>
+
+										<div class="form-row justify-content-center mt-0">
+											<div class="form-group col-2">
+												<input type="text" class="form-control" id="inputZip" placeholder="Code postal" required>
+												<!--<label for="inputZip">Code Postal</label>-->
+											</div>
+											<div class="form-group col-5">
+												<input type="text" class="form-control" id="inputCity" placeholder="Ville" required>
+												<!--<label for="inputCity">Ville</label>-->
+											</div>
+										</div>
+
+										<div class="form-row justify-content-center mt-0">
+											<div class="form-group col-7">
+												<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
+													<option selected disabled>Note attribuée au restaurant...</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="form-row justify-content-center mt-2">
+											<div class="form-group col-7">
+												<textarea class="form-control" id="reviewTextearea" rows="4" placeholder="Rédigez votre commentaire..." required></textarea>
+											</div>
+										</div>
+										<div class="form-row justify-content-center mt-3">
+											<button type="submit" class="col-6 btn bg-green ">Validez</button>
+										</div>
+
 									</form>
+
 								</div>
 							</div>
 						</div>
-					</div><!--id="modalAddRestaurant"-->
-				</div>
-			</div> <!--id="header"-->
-			
-			<!-- ROW MAP + RESTAURANTS LIST -->
-			<div class="row" id="map&List">
-
-				<!-- COL MAP -->
-				<div class="col-9" id="colMap">
-
-				</div>
-
-				<!-- COL RESTAURANTS LIST -->
-				<div class="col text-center py-5" id="colList">
-					<h6 class="subtitleRestaurantList uppercase"><b>Restaurants autour de vous</b></h6>
-					<p class="my-3"><i><small>Filtrez votre recherche par note</small></i><a data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter"><img class="arrowCollapse mt-0 pt-0 ml-2" src="img/doubleArrow.png" alt="To filter" width="30"></a></p>
-					<div class="collapse" id="collapseFilter">
-						<label><small>Notes comprises entre :</small></label>
-						<select>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-						</select>
-						<label> et </label>
-						<select>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-					</div> <!--id="collapseFilter"-->
-
-					<div id="restaurantList">
-						<ul class="mt-3">
-							<li><button type="button" data-toggle="modal" data-target="#restaurantModal" class="buttonRestaurant border-0"><b>#1 Restaurant</b></button><i>&ensp;5/5</i><br />1 adresse du restaurant<br />13000 VILLE</li>
-							<li class="mt-3"><button class="buttonRestaurant border-0"><b>#2 Restaurant</b></button><i>&ensp;2/5</i><br />2 adresse du restaurant<br />13000 VILLE</li>
-							<li class="mt-3"><button class="buttonRestaurant border-0"><b>#3 Restaurant</b></button><i>&ensp;4/5</i><br />3 adresse du restaurant<br />13000 VILLE</li>
-							<li class="mt-3"><button class="buttonRestaurant border-0"><b>#2 Restaurant</b></button><i>&ensp;2/5</i><br />2 adresse du restaurant<br />13000 VILLE</li>
-							<li class="mt-3"><button class="buttonRestaurant border-0"><b>#3 Restaurant</b></button><i>&ensp;4/5</i><br />3 adresse du restaurant<br />13000 VILLE</li>
-							<li class="mt-3"><button class="buttonRestaurant border-0"><b>#2 Restaurant</b></button><i>&ensp;2/5</i><br />2 adresse du restaurant<br />13000 VILLE</li>
-							<li class="mt-3"><button class="buttonRestaurant border-0"><b>#3 Restaurant</b></button><i>&ensp;4/5</i><br />3 adresse du restaurant<br />13000 VILLE</li>
-							<li class="mt-3"><button class="buttonRestaurant border-0"><b>#2 Restaurant</b></button><i>&ensp;2/5</i><br />2 adresse du restaurant<br />13000 VILLE</li>
-							<li class="mt-3"><button class="buttonRestaurant border-0"><b>#3 Restaurant</b></button><i>&ensp;4/5</i><br />3 adresse du restaurant<br />13000 VILLE</li>
-							<li class="mt-3"><button class="buttonRestaurant border-0"><b>#2 Restaurant</b></button><i>&ensp;2/5</i><br />2 adresse du restaurant<br />13000 VILLE</li>
-							<li class="mt-3"><button class="buttonRestaurant border-0"><b>#3 Restaurant</b></button><i>&ensp;4/5</i><br />3 adresse du restaurant<br />13000 VILLE</li>
-						</ul>
+						<!--/.Content-->
 					</div>
+				</div>
+			</div>
+		</div> <!--id="header"-->
+		<!-- ROW MAP + RESTAURANTS LIST -->
+		<div class="row" id="mapAndList">
 
-					<!-- Modal restaurants details-->
-					<div class="modal fade" id="restaurantModal" tabindex="-1" aria-labelledby="restaurantModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<div class="row mx-2 my-auto">
-										<h3 class="modal-title mt-1" id="restaurantModalLabel">#1 Restaurant</h3>
-										<h5 class="ml-3 mt-3">note moyenne : 5</h5>
-									</div>
+			<!-- COL MAP -->
+			<div class="col-8" id="map"></div>
 
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									<div class="row subtitle">
-										<h5 class="col-9 uppercase mt-2 ml-2 text-right">Avis des clients du restaurant</h5>
-										<div class="col text-center" id="iconAddReview"><button type="button" class="p-1" data-toggle="tooltip" data-placement="right" title="Ajoutez un avis"><img class="iconAddReview" src="img/addReviewP7.png" alt="Ajoutez un avis" width="30"></button></div>
-									</div><!--class="subtitle"-->
+			<!-- COL RESTAURANTS LIST -->
+			<div class="col text-center py-5" id="colList">
+				<h6 class="subtitleRestaurantList uppercase"><b>Restaurants autour de vous</b></h6>
+				<p class="my-3"><i><small>Filtrez votre recherche par note</small></i><a data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter"><img class="arrowCollapse mt-0 pt-0 ml-2" src="img/doubleArrow.png" alt="To filter" width="30"></a></p>
+				<div class="collapse" id="collapseFilter">
+					<label><small>Notes comprises entre :</small></label>
+					<select>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+					</select>
+					<label> et </label>
+					<select>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</div> <!--id="collapseFilter"-->
 
-									<div class="listReviews text-center mr-5 mt-4">
-										<ul>
-											<li class="mb-4"><p class="italic mb-1"><b>Le 01/10/2019 :&ensp;Commentaire de Pierre</b></p><p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut finibus est. In eu luctus justo. Ut eros risus, vehicula ut placerat molestie, iaculis vitae quam.</p><p><b>Note : 5</b></p></li>
-											<li class="mb-4"><p class="italic mb-1"><b>Le 01/10/2019 :&ensp;Commentaire de Paul</b></p><p class="mb-1">Phasellus gravida dolor leo, vitae mollis libero imperdiet non. Suspendisse sed viverra mi. Sed hendrerit augue a nisi varius fermentum.</p><p><b>Note : 5</b></p></li>
-											<li class="mb-4"><p class="italic mb-1"><b>Le 01/10/2019 :&ensp;Commentaire de Jacques</b></p><p class="mb-1">Fusce tincidunt pharetra tempus. Aliquam sit amet tristique sem. Vivamus euismod risus vitae auctor volutpat. Aliquam ullamcorper semper tempor..</p><p><b>Note : 5</b></p></li>
-										</ul>
-									</div>	<!--class="listReview"-->
-
-									<button type="button" class="addReview border-0 mt-3" id="addReview" data-toggle="collapse" data-target="#collapseAddReview" aria-expanded="false" aria-controls="collapseAddReview">Ajoutez votre avis !</button>
-
-									<!-- Collapse Add review -->
-									<div class="collapse mt-2" id="collapseAddReview">
-										<div class="card card-body border-0 mt-1">
-											<p class="text-left lead mb-3">Donnez vous aussi votre avis sur ce restaurant...</p>
-											<form id="addReviewForm" method="post">
-												<div class="form-group">
-													<input type="text" class="form-control" placeholder="Votre nom" required>
-												</div>
-
-												<div class="row grade border">
-													<label class="grade" for="grade">Votre note : </label>
-													<div class="col">
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-															<label class="form-check-label" for="inlineRadio1">1</label>
-														</div>
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-															<label class="form-check-label" for="inlineRadio2">2</label>
-														</div>
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
-															<label class="form-check-label" for="inlineRadio3">3</label>
-														</div>
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" disabled>
-															<label class="form-check-label" for="inlineRadio4">4</label>
-														</div>
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5" disabled>
-															<label class="form-check-label" for="inlineRadio5">5</label>
-														</div>
-													</div>
-												</div>
-												
-												
-
-												<div class="form-group">
-													<textarea class="form-control" id="reviewTextearea" rows="3" placeholder="Rédigez votre commentaire..." required></textarea>
-												</div>
-												<button type="submit" class="btn btn-primary">Submit</button>
-											</form>
-										</div>
-									</div>
-
-
-
-								</div> <!--class="modal-body"-->
-
-								<div class="modal-footer mt-4">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-								</div> <!--class="modal-footer"-->
-							</div> <!--class="modal-content"-->
-						</div> <!--class="modal-dialog"-->
-					</div> <!--id="restaurantModal"-->
-
-
-					
-
-
-
+				<div id="restaurantList">
+					<ul class="restaurantList mt-3">
+						<li><button type="button" data-toggle="modal" data-target="#restaurantModal" class="buttonRestaurant border-0"><b>#1 Restaurant</b></button><i>&ensp;5/5</i><br />1 adresse du restaurant<br />13000 VILLE</li>
+						<li class="mt-3"><button class="buttonRestaurant border-0"><b>#2 Restaurant</b></button><i>&ensp;2/5</i><br />2 adresse du restaurant<br />13000 VILLE</li>
+						<li class="mt-3"><button class="buttonRestaurant border-0"><b>#3 Restaurant</b></button><i>&ensp;4/5</i><br />3 adresse du restaurant<br />13000 VILLE</li>
+						<li class="mt-3"><button class="buttonRestaurant border-0"><b>#2 Restaurant</b></button><i>&ensp;2/5</i><br />2 adresse du restaurant<br />13000 VILLE</li>
+						<li class="mt-3"><button class="buttonRestaurant border-0"><b>#3 Restaurant</b></button><i>&ensp;4/5</i><br />3 adresse du restaurant<br />13000 VILLE</li>
+						<li class="mt-3"><button class="buttonRestaurant border-0"><b>#2 Restaurant</b></button><i>&ensp;2/5</i><br />2 adresse du restaurant<br />13000 VILLE</li>
+						<li class="mt-3"><button class="buttonRestaurant border-0"><b>#3 Restaurant</b></button><i>&ensp;4/5</i><br />3 adresse du restaurant<br />13000 VILLE</li>
+						<li class="mt-3"><button class="buttonRestaurant border-0"><b>#2 Restaurant</b></button><i>&ensp;2/5</i><br />2 adresse du restaurant<br />13000 VILLE</li>
+						<li class="mt-3"><button class="buttonRestaurant border-0"><b>#3 Restaurant</b></button><i>&ensp;4/5</i><br />3 adresse du restaurant<br />13000 VILLE</li>
+						<li class="mt-3"><button class="buttonRestaurant border-0"><b>#2 Restaurant</b></button><i>&ensp;2/5</i><br />2 adresse du restaurant<br />13000 VILLE</li>
+						<li class="mt-3"><button class="buttonRestaurant border-0"><b>#3 Restaurant</b></button><i>&ensp;4/5</i><br />3 adresse du restaurant<br />13000 VILLE</li>
+					</ul>
 				</div>
 
-			</div> <!--id="map&List"-->
-			
-		</div> <!--id="mainPage"-->
-		<script>
-			$(document).ready(function () {
-				$('[data-toggle="tooltip"]').tooltip();
-			});
-		</script>
-    </body>
+				<!-- Modal restaurants details-->
+				<div class="modal fade" id="restaurantModal" tabindex="-1" aria-labelledby="restaurantModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<div class="row mx-2 my-auto">
+									<h3 class="modal-title mt-1" id="restaurantModalLabel">#1 Restaurant</h3>
+									<h5 class="ml-3 mt-3">note moyenne : 5</h5>
+								</div>
+
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="row subtitle">
+									<h5 class="col-9 uppercase mt-2 ml-2 text-right">Avis des clients du restaurant</h5>
+									<div class="col text-center" id="iconAddReview"><button type="button" class="p-1" data-toggle="tooltip" data-placement="right" title="Ajoutez un avis"><img class="iconAddReview" src="img/addReviewP7.png" alt="Ajoutez un avis" width="30"></button></div>
+								</div><!--class="subtitle"-->
+
+								<div class="listReviews text-center mr-5 mt-4">
+									<ul>
+										<li class="mb-4"><p class="italic mb-1"><b>Le 01/10/2019 :&ensp;Commentaire de Pierre</b></p><p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut finibus est. In eu luctus justo. Ut eros risus, vehicula ut placerat molestie, iaculis vitae quam.</p><p><b>Note : 5</b></p></li>
+										<li class="mb-4"><p class="italic mb-1"><b>Le 01/10/2019 :&ensp;Commentaire de Paul</b></p><p class="mb-1">Phasellus gravida dolor leo, vitae mollis libero imperdiet non. Suspendisse sed viverra mi. Sed hendrerit augue a nisi varius fermentum.</p><p><b>Note : 5</b></p></li>
+										<li class="mb-4"><p class="italic mb-1"><b>Le 01/10/2019 :&ensp;Commentaire de Jacques</b></p><p class="mb-1">Fusce tincidunt pharetra tempus. Aliquam sit amet tristique sem. Vivamus euismod risus vitae auctor volutpat. Aliquam ullamcorper semper tempor..</p><p><b>Note : 5</b></p></li>
+									</ul>
+								</div>	<!--class="listReview"-->
+
+								<button type="button" class="addReview border-0 mt-3" id="addReview" data-toggle="collapse" data-target="#collapseAddReview" aria-expanded="false" aria-controls="collapseAddReview">Ajoutez votre avis !</button>
+
+								<!-- Collapse Add review -->
+								<div class="collapse mt-2" id="collapseAddReview">
+									<div class="card card-body border-0 mt-3">
+										<p class="text-left lead mb-3">Donnez vous aussi votre avis sur ce restaurant...</p>
+										<form id="addReviewForm" method="post">
+											<div class="form-group">
+												<input type="text" class="form-control" placeholder="Indiquez votre nom (ou pseuso)" required>
+											</div>
+
+											<div class="form-group">
+												<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
+													<option selected disabled>Indiquez la note attribuée au restaurant...</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+												</select>
+											</div>
+
+											<div class="form-group mt-3">
+												<textarea class="form-control" id="reviewTextearea" rows="3" placeholder="Rédigez votre commentaire..." required></textarea>
+											</div>
+											<button type="submit" class="col-6 btn bg-green ">Validez</button>
+										</form>
+									</div>
+								</div>
+
+							</div> <!--class="modal-body"-->
+
+							<div class="modal-footer mt-3">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+							</div> <!--class="modal-footer"-->
+						</div> <!--class="modal-content"-->
+					</div> <!--class="modal-dialog"-->
+				</div> <!--id="restaurantModal"-->
+
+			</div>
+
+		</div> <!--id="mapAndList"-->
+
+	</div> <!--id="mainPage"-->
+
+	<!-- Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- JAVASCRIPT -->
+	<script type="text/javascript" src="./app.js"></script>
+
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<!-- Google Map API -->
+	<script defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHVZedrGaXc2k-4B9XU1Nns_M6UAqXyLY&callback=initMap">
+	</script>
+
+
+</body>
 </html>
